@@ -1,0 +1,13 @@
+#lang scheme
+; Exponentiation
+
+; Recursive proceedure to compute exponential of a given
+; number b with the base n.
+
+; We can say, b^n = b * b^(n-1), with b^0 = 1 as the base case.
+; This can be converted to the following function
+(define expt (λ(b n) 
+  (if (= n 0)
+      1
+      (* b (expt b (- n 1))))))
+; (expt 2 3) => 8
