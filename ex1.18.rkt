@@ -14,12 +14,16 @@
     ((even? x) (/ x 2))))
 
 (define (fast-mult a b)
-  (iter-mult a b 0))         ; We start with n = 0
+  (iter-mult2 a b 0))         ; We start with n = 0
 
 ;; When b is odd (and not 1), we replace n with the current
 ;; value of a. When b = 1, the current value of n is added to
 ;; that of a, returning the final result.
-(define (iter-mult a b n)
+
+;; EDIT: Seems like iter-mult is buggy, and producing incorrect
+;; results for large values of a and b.
+;; I'm still keeping it here for future reference.
+(define (iter-mult a b n)               ;; NOT CORRECT!
   (cond
     ((= b 0) 0)
     ((= b 1) (+ a n))
