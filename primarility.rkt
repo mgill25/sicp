@@ -25,7 +25,7 @@
   (= n (smallest-divisor n)))
 
 ;; The end test for find-divisor is based on the fact that if n is not prime
-;; it must have a divisor les than or equal to square-root of n. This means that
+;; it must have a divisor less than or equal to square-root of n. This means that
 ;; algorithm need only test divisors between 1 and square-root(n). Consequently
 ;; the number of steps required to identify n as prime will have order of growth
 ;; Theta(square-root of n)

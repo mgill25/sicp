@@ -12,16 +12,18 @@
               x)))
 
 ;   A guess is improved by averaging it with the quotient of the radicand and the old guess.
-;   (define (improve guess x)
-;       (average guess (/ x guess)))
+(define (improve guess x)
+  (average guess (/ x guess)))
 ;   where...
-;   (define (average x y)
-;       (/ (+ x y) 2))
+(define (average x y)
+  (/ (+ x y) 2))
 ;
 ;   We also have to say what do we mean by good-enough. A poor test:
-;   (define (good-enough? guess x)
-;       (< (abs (- (square guess) x)) 0.001))
+(define (good-enough? guess x)
+  (< (abs (- (square guess) x)) 0.001))
 ;
 ;   Finally, we need a way to get started. 1 can be used as a good starting guess.
-;   (define (sqrt x)
-;       (sqrt-iter 1.0 x))
+(define (sqrt x)
+  (sqrt-iter 1.0 x))
+
+(define (square x) (* x x))
